@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "software Eng. lecture note"
-permalink: /docs/softwareEng2026
+permalink: /softwareEng2026
 ---
 
 # 2026ソフトウェア工学演習
