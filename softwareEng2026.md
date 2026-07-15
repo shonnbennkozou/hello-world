@@ -1,3 +1,9 @@
+---
+layout: page
+title: "software Eng. lecture note"
+permalink: /docs/softwareEng2026
+---
+
 # 2026ソフトウェア工学演習
 第11回 演習課題
 
@@ -180,3 +186,28 @@
 
 ### プロジェクトの評価基準
 - 作成したWBSおよびガントチャートに則って、実際にプロジェクトを過不足なく遂行できるかどうかが、計画自体の最大の評価基準となる。
+
+## 第13回 CI/CDの実践
+
+### GitHub Pages
+- Githubにあるリモートリポジトリの内容をWebページとして公開できる。
+- HP更改はCI/CDにより自動化される。
+- Jekyllを使用することでMarkdownファイルを自動でHTML化できる。
+
+### GitHub Pagesの設定手順
+1. 課題用リポジトリ名をSettingsタブから`<user>.github.io`に修正する。
+2. Settings→Pages→Build and deploymentのSourceを、deploy from a branchからGitHub Actionsに設定する。
+3. GitHub Pages Jekyllのconfigureを実行し、デフォルトのままymlをコミットする（mainブランチでもよい）。
+4. devブランチ内に公開用フォルダ（例：docs）を作成し、`jekyll new --skip-bundle .`でJekyllサイトを作成する。
+5. docsディレクトリで`bundle install`を実行し、.gitignoreにGemfile.lockを追加する。
+
+### _config.ymlの設定
+- **title**：サイトのタイトルを変更する。
+- **baseurl**：公開先のサブパス（例：`/docs`）を設定する。
+- **url**：自分のアカウント名を使ったベースURL（`https://<user>.github.io`）を設定する。
+
+### ページの追加とデプロイ
+1. 新規Markdownファイルをdocs配下に移動し、layout・title・permalinkをYAMLで設定する。
+2. index.markdownにそのファイルへのリンクを作成する。
+3. mainブランチへプルリクエストを作成し、マージする。
+4. 公開URL：`https://アカウント名.github.io/hello-world/docs/`
